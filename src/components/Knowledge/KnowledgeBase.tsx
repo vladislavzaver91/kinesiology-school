@@ -35,7 +35,7 @@ const KNOWLEDGE_ITEMS: IKnowledgeItems[] = [
 		tags: ['видео', 'введение', 'практика'],
 		description: 'Купирование болевого синдрома в области поясницы. Часть 1.',
 		type: 'video',
-		link: '№',
+		link: '#',
 	},
 	{
 		title: 'Реабилитация после травмы колена',
