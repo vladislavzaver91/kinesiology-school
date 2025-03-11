@@ -1,0 +1,30 @@
+.scroll-top-btn {
+	cursor: pointer;
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	font-size: 40px;
+	z-index: 1;
+}
+@media screen and (min-width: 1200px) {
+	.scroll-top-btn {
+		bottom: 80px;
+		right: 60px;
+		font-size: 50px;
+	}
+}
+
+.scroll-top-icon:hover,
+.scroll-top-icon:focus {
+	fill: #68a1ec;
+	transition: 0.3s;
+}
+
+.show {
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+.hide {
+	opacity: 0;
+}
