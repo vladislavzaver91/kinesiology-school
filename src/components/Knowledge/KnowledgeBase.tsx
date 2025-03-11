@@ -35,7 +35,7 @@ const KNOWLEDGE_ITEMS: IKnowledgeItems[] = [
 		tags: ['видео', 'введение', 'практика'],
 		description: 'Купирование болевого синдрома в области поясницы. Часть 1.',
 		type: 'video',
-		link: '/videos/video-1.mp4',
+		link: '№',
 	},
 	{
 		title: 'Реабилитация после травмы колена',
@@ -51,7 +51,7 @@ const KNOWLEDGE_ITEMS: IKnowledgeItems[] = [
 		tags: ['видео', 'здоровье', 'практика'],
 		description: 'Клинический разбор.',
 		type: 'video',
-		link: '/videos/video-2.mp4',
+		link: '№',
 	},
 	{
 		title: 'Принципы мышечного тестирования',
