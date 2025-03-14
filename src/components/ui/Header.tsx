@@ -19,6 +19,7 @@ const NAV_ITEMS = [
 		href: '/courses',
 		label: 'Обучение',
 		submenu: [
+			{ href: '/basic-seminar', label: 'Базовый семинар' },
 			{ href: '#programs', label: 'Программы курсов' },
 			{ href: '#schedule', label: 'График семинаров' },
 		],

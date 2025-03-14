@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
 import { ParallaxBanner } from 'react-scroll-parallax'
+import { AdvantagesItems } from '../../types'
 
-const ADVANTAGES_ITEMS = [
+const ADVANTAGES_ITEMS: AdvantagesItems[] = [
 	{
 		title: 'Лицензии',
 		desc: 'Официально признанные программы обучения с государственной аккредитацией.',

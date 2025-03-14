@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Button } from '../ui/Button'
 
 export const HeroSection = () => {
 	return (
@@ -28,12 +29,10 @@ export const HeroSection = () => {
 						Единственная в России с запатентованными методиками
 					</motion.p>
 					<div className='flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6'>
-						<button className='bg-blue-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all cursor-pointer'>
-							Записаться на курс
-						</button>
-						<button className='border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition-all cursor-pointer'>
+						<Button>Записаться на курс</Button>
+						<Button className='!border-2 !border-blue-600 !text-blue-600 !bg-transparent hover:bg-blue-50!'>
 							Онлайн-оплата
-						</button>
+						</Button>
 					</div>
 				</div>
 

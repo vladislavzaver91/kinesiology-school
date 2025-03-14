@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
+import { Licenses } from '../../types'
 
-const LICENSE_ITEMS = [
+const LICENSE_ITEMS: Licenses[] = [
 	{
 		title: 'Лицензия №1',
 		src: '/images/placeholder.png',

@@ -6,6 +6,7 @@ import { Knowledge } from './pages/Knowledge'
 import { Reviews } from './pages/Reviews'
 import { Contacts } from './pages/Contacts'
 import { Dashboard } from './pages/Dashboard'
+import { BasicSeminar } from './pages/BasicSeminar'
 
 export const RoutesConfig = () => {
 	return (
@@ -17,6 +18,7 @@ export const RoutesConfig = () => {
 			<Route path='/reviews' element={<Reviews />} />
 			<Route path='/contacts' element={<Contacts />} />
 			<Route path='/dashboard' element={<Dashboard />} />
+			<Route path='/courses/basic-seminar' element={<BasicSeminar />} />
 		</Routes>
 	)
 }

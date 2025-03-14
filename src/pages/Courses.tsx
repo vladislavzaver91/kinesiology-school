@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { CoursePrograms } from '../components/Courses/CoursePrograms'
 import { SeminarSchedule } from '../components/Courses/SeminarSchedule'
+import { TrainingAudience } from '../components/Courses/TrainingAudience '
+import { TrainingBenefits } from '../components/Courses/TrainingBenefits '
 
 export const Courses = () => {
 	return (
@@ -24,6 +26,12 @@ export const Courses = () => {
 				</motion.p>
 			</div>
 
+			<div className='section' id='basics'>
+				<TrainingAudience />
+			</div>
+			<div className='section' id='basics'>
+				<TrainingBenefits />
+			</div>
 			<div className='section' id='programs'>
 				<CoursePrograms />
 			</div>

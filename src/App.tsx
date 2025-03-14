@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import Footer from './components/Footer'
-import { Header } from './components/Header'
+import Footer from './components/ui/Footer'
+import { Header } from './components/ui/Header'
 import { RoutesConfig } from './routes'
-import { ButtonScrollTop } from './components/ButtonScrollTop'
+import { ButtonScrollTop } from './components/ui/ButtonScrollTop'
 
 function App() {
 	const [showScrollToTop, setShowScrollToTop] = useState<boolean>(false)

@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
-import { IKnowledgeItems } from './KnowledgeBase'
+import { KnowledgeItems } from '../../types'
+import { Button } from '../ui/Button'
 
 interface KnowledgeMaterialsListProps {
-	filteredItems: IKnowledgeItems[]
+	filteredItems: KnowledgeItems[]
 }
 
 export const KnowledgeMaterialsList = ({
@@ -30,14 +31,13 @@ export const KnowledgeMaterialsList = ({
 						<span className='text-gray-500 text-sm'>
 							{item.type === 'article' ? 'Статья' : 'Видео'}
 						</span>
-						<a
+						<Button
+							isLink
 							href={item.link}
-							target='_blank'
-							rel='noopener noreferrer'
-							className='bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full shadow-md hover:shadow-lg transition-all'
+							className='!px-4 !py-2 !shadow-md hover:shadow-lg!'
 						>
 							{item.type === 'article' ? 'Читать' : 'Смотреть'}
-						</a>
+						</Button>
 					</div>
 				</motion.li>
 			))}

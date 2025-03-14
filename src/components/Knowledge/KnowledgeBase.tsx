@@ -2,17 +2,9 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { KnowledgeMaterialsList } from './KnowledgeMaterialsList'
 import { KnowledgeFilter } from './KnowledgeFilter'
+import { KnowledgeItems } from '../../types'
 
-export interface IKnowledgeItems {
-	title: string
-	category: string
-	tags: string[]
-	description: string
-	type: string
-	link: string
-}
-
-const KNOWLEDGE_ITEMS: IKnowledgeItems[] = [
+const KNOWLEDGE_ITEMS: KnowledgeItems[] = [
 	{
 		title: 'Что такое кинезиология?',
 		category: 'Основы кинезиологии',
@@ -67,13 +59,13 @@ export const KnowledgeBase = () => {
 	const [categoryFilter, setCategoryFilter] = useState<string>('all')
 	const [tagFilter, setTagFilter] = useState<string>('all')
 
-	const categories = [
+	const categories: string[] = [
 		'all',
 		'Основы кинезиологии',
 		'Кейсы из практики',
 		'Видеоуроки для начинающих',
 	]
-	const tags = [
+	const tags: string[] = [
 		'all',
 		'введение',
 		'теория',

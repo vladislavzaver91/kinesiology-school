@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import { CoursesItems } from '../../types'
+import { Button } from '../ui/Button'
 
-const COURSES_ITEMS = [
+const COURSES_ITEMS: CoursesItems[] = [
 	{
 		title: 'Базовый курс',
 		description:
@@ -57,9 +59,9 @@ export const CoursePrograms = () => {
 							<p className='text-gray-500 mb-4'>
 								<span className='font-medium'>Стоимость:</span> {course.price}
 							</p>
-							<button className='bg-blue-600 min-w-32 w-fit text-white px-6 py-2 rounded-full hover:bg-blue-700 shadow-md hover:shadow-lg transition-all'>
+							<Button className='!min-w-32 !w-fit !px-6 !py-2 hover:shadow-lg!'>
 								Узнать больше
-							</button>
+							</Button>
 						</motion.li>
 					))}
 				</ul>

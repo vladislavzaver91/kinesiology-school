@@ -1,5 +1,5 @@
 import { FaArrowCircleUp } from 'react-icons/fa'
-import '../assets/styles/ButtonScrollTop.css'
+import '../../assets/styles/ButtonScrollTop.css'
 
 interface ButtonScrollTopProps {
 	show: boolean

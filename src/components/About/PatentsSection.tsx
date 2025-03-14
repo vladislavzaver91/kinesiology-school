@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
 import { ParallaxBanner } from 'react-scroll-parallax'
+import { PatentItems } from '../../types'
 
-const PATENT_ITEMS = [
+const PATENT_ITEMS: PatentItems[] = [
 	{
 		title: 'Методика глубокой мышечной активации',
 		descr:

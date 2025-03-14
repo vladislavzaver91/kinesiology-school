@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { Button } from '../ui/Button'
 
 type FormData = {
 	name: string
@@ -17,7 +18,7 @@ export const ContactForm = () => {
 
 	const onSubmit: SubmitHandler<FormData> = data => {
 		console.log(data) // Дописать логику отправки формы
-		alert('Форма отправлена! (заглушка)')
+		console.log('Форма отправлена!')
 	}
 
 	return (
@@ -95,12 +96,9 @@ export const ContactForm = () => {
 					/>
 				</div>
 
-				<button
-					type='submit'
-					className='bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all w-full'
-				>
+				<Button typeBtn='submit' className='!px-6 !shadow-md hover:shadow-lg!'>
 					Отправить
-				</button>
+				</Button>
 			</form>
 		</motion.div>
 	)

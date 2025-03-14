@@ -1,22 +1,60 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { SeminarsTable } from './SeminarsTable'
+import { FilterButton } from '../ui/FilterButton'
+import { SeminarsItems } from '../../types'
 
-export interface ISeminarsItems {
-	date: string
-	topic: string
-	speaker: string
-	cost: string
-	format: string
-}
-
-const SEMINARS_ITEMS: ISeminarsItems[] = [
+const SEMINARS_ITEMS: SeminarsItems[] = [
+	{
+		date: '14–16.03.2025',
+		topic: 'Реабилитационная кинезиология (Часть 2)',
+		speaker: 'Л.Ф. Васильева',
+		cost: 'От 500 $',
+		format: 'offline',
+		description:
+			'Это ваш шанс углубить знания в реабилитационной кинезиологии.',
+		learnWhat: [
+			'Оценивать состояние организма и выявлять мышечные и системные дисбалансы.',
+			'Применять кинезиологические техники для восстановления здоровья и коррекции осанки.',
+			'Эффективно справляться с болями в мышцах и суставах.',
+		],
+		keyTopics: [
+			'Как нарушения тонуса мышц провоцируют боли?',
+			'Роль нервной системы в развитии заболеваний.',
+			'Методы восстановления баланса нервных систем.',
+		],
+		forWhom: [
+			'Врачей и реабилитологов',
+			'Кинезиологов и остеопатов',
+			'Тренеров, массажистов и специалистов ЛФК',
+		],
+		contacts: {
+			phone: '+971 50 552 9313',
+			email: 'eellie8888@gmail.com',
+		},
+	},
 	{
 		date: '15.04.2025',
 		topic: 'Основы кинезиологии',
 		speaker: 'Иван Иванов',
 		cost: '5 000 ₽',
 		format: 'offline',
+		description: 'Познакомьтесь с основами кинезиологии для начинающих.',
+		learnWhat: [
+			'Основы анатомии и физиологии человека.',
+			'Как диагностировать дисбаланс в организме.',
+			'Применение техник кинезиологии в ежедневной практике.',
+		],
+		keyTopics: [
+			'Что такое кинезиология?',
+			'Как работает нервная система?',
+			'Методы восстановления здоровья.',
+		],
+		forWhom: ['Начинающим кинезиологам', 'Тренерам и массажистам'],
+		contacts: {
+			phone: '+7 999 123 4567',
+			email: 'ivan.ivanov@gmail.com',
+		},
 	},
 	{
 		date: '20.04.2025',
@@ -24,6 +62,22 @@ const SEMINARS_ITEMS: ISeminarsItems[] = [
 		speaker: 'Мария Петрова',
 		cost: '6 000 ₽',
 		format: 'online',
+		description: 'Познакомьтесь с основами кинезиологии для начинающих.',
+		learnWhat: [
+			'Основы анатомии и физиологии человека.',
+			'Как диагностировать дисбаланс в организме.',
+			'Применение техник кинезиологии в ежедневной практике.',
+		],
+		keyTopics: [
+			'Что такое кинезиология?',
+			'Как работает нервная система?',
+			'Методы восстановления здоровья.',
+		],
+		forWhom: ['Начинающим кинезиологам', 'Тренерам и массажистам'],
+		contacts: {
+			phone: '+7 999 123 4567',
+			email: 'ivan.ivanov@gmail.com',
+		},
 	},
 	{
 		date: '25.04.2025',
@@ -31,6 +85,22 @@ const SEMINARS_ITEMS: ISeminarsItems[] = [
 		speaker: 'Алексей Сидоров',
 		cost: '5 500 ₽',
 		format: 'offline',
+		description: 'Познакомьтесь с основами кинезиологии для начинающих.',
+		learnWhat: [
+			'Основы анатомии и физиологии человека.',
+			'Как диагностировать дисбаланс в организме.',
+			'Применение техник кинезиологии в ежедневной практике.',
+		],
+		keyTopics: [
+			'Что такое кинезиология?',
+			'Как работает нервная система?',
+			'Методы восстановления здоровья.',
+		],
+		forWhom: ['Начинающим кинезиологам', 'Тренерам и массажистам'],
+		contacts: {
+			phone: '+7 999 123 4567',
+			email: 'ivan.ivanov@gmail.com',
+		},
 	},
 	{
 		date: '30.04.2025',
@@ -38,6 +108,22 @@ const SEMINARS_ITEMS: ISeminarsItems[] = [
 		speaker: 'Мария Петрова',
 		cost: '5 000 ₽',
 		format: 'online',
+		description: 'Познакомьтесь с основами кинезиологии для начинающих.',
+		learnWhat: [
+			'Основы анатомии и физиологии человека.',
+			'Как диагностировать дисбаланс в организме.',
+			'Применение техник кинезиологии в ежедневной практике.',
+		],
+		keyTopics: [
+			'Что такое кинезиология?',
+			'Как работает нервная система?',
+			'Методы восстановления здоровья.',
+		],
+		forWhom: ['Начинающим кинезиологам', 'Тренерам и массажистам'],
+		contacts: {
+			phone: '+7 999 123 4567',
+			email: 'ivan.ivanov@gmail.com',
+		},
 	},
 ]
 
@@ -48,6 +134,12 @@ export const SeminarSchedule = () => {
 		filter === 'all'
 			? SEMINARS_ITEMS
 			: SEMINARS_ITEMS.filter(seminar => seminar.format === filter)
+
+	const filters: { label: string; value: 'all' | 'online' | 'offline' }[] = [
+		{ label: 'Все', value: 'all' },
+		{ label: 'Онлайн', value: 'online' },
+		{ label: 'Очно', value: 'offline' },
+	]
 
 	return (
 		<section className='py-16 bg-gray-50 rounded-2xl'>
@@ -64,36 +156,15 @@ export const SeminarSchedule = () => {
 
 				{/* Фильтры */}
 				<div className='flex justify-center space-x-4 mb-8'>
-					<button
-						className={`px-4 py-2 rounded-full cursor-pointer text-[16px] lg:text-base ${
-							filter === 'all'
-								? 'bg-blue-600 hover:bg-blue-700 text-white'
-								: 'bg-gray-200 hover:bg-gray-300  text-gray-700'
-						}`}
-						onClick={() => setFilter('all')}
-					>
-						Все
-					</button>
-					<button
-						className={`px-4 py-2 rounded-full cursor-pointer text-[16px] lg:text-base ${
-							filter === 'online'
-								? 'bg-blue-600 hover:bg-blue-700 text-white'
-								: 'bg-gray-200 hover:bg-gray-300  text-gray-700'
-						}`}
-						onClick={() => setFilter('online')}
-					>
-						Онлайн
-					</button>
-					<button
-						className={`px-4 py-2 rounded-full cursor-pointer text-[16px] lg:text-base ${
-							filter === 'offline'
-								? 'bg-blue-600 hover:bg-blue-700 text-white'
-								: 'bg-gray-200 hover:bg-gray-300 text-gray-700'
-						}`}
-						onClick={() => setFilter('offline')}
-					>
-						Очно
-					</button>
+					{filters.map(filterOption => (
+						<FilterButton
+							key={filterOption.value}
+							label={filterOption.label}
+							value={filterOption.value}
+							filter={filter}
+							setFilter={setFilter}
+						/>
+					))}
 				</div>
 
 				{/* Таблица */}

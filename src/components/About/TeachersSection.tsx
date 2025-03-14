@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
+import { Teachers } from '../../types'
 
-const TEACHERS = [
+const TEACHERS: Teachers[] = [
 	{
 		name: 'Иван Иванов',
 		bio: 'Врач-реабилитолог с 15-летним опытом. Автор методики восстановления через движение.',
