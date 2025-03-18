@@ -4,16 +4,16 @@ import { AdvantagesItems } from '../../types'
 
 const ADVANTAGES_ITEMS: AdvantagesItems[] = [
 	{
-		title: 'Лицензии',
-		desc: 'Официально признанные программы обучения с государственной аккредитацией.',
+		title: 'Дополнительное образование',
+		desc: 'Обучение в рамках дополнительного образования взрослых и детей.',
 	},
 	{
 		title: 'Авторские методики',
 		desc: 'Уникальные запатентованные подходы, разработанные нашими экспертами.',
 	},
 	{
-		title: 'Статистика выпускников',
-		desc: 'Более 500 специалистов успешно применяют знания в практике.',
+		title: 'Статистика пациентов',
+		desc: 'Более 2000 человек прошедших оздоровление у автора методики и его учеников.',
 	},
 ]
 
@@ -34,11 +34,11 @@ export const AdvantagesSection = () => {
 					>
 						Преимущества нашей школы
 					</motion.h2>
-					<div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
 						{ADVANTAGES_ITEMS.map((item, index) => (
 							<motion.div
 								key={item.title}
-								className='bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100'
+								className='bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 flex flex-col justify-between'
 								initial={{ opacity: 0, y: 50 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.8, delay: index * 0.2 }}

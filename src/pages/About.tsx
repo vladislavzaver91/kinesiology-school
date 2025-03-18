@@ -22,8 +22,7 @@ export const About = () => {
 					transition={{ delay: 0.3, duration: 0.5 }}
 					className='text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto'
 				>
-					Узнайте больше о нашей истории, уникальных методиках и команде
-					профессионалов.
+					Узнайте больше о методиках и основателе школы Вениамине Сущевском.
 				</motion.p>
 			</div>
 

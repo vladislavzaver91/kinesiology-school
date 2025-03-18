@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion'
+import Lightbox from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
 import { AwardsAndBenefitsItems } from '../../types'
+import { useLightbox } from '../../hooks/useLightbox'
 
 const AWARDS: AwardsAndBenefitsItems[] = [
 	{
@@ -22,7 +25,21 @@ const AWARDS: AwardsAndBenefitsItems[] = [
 	},
 ]
 
+const IMAGES = [
+	{
+		src: '/images/about-photo-1.jpg',
+		alt: 'Профессор Сущевский В.И. c Васильевой Л.Ф.',
+	},
+	{
+		src: '/images/about-photo-2.jpg',
+		alt: 'Профессор Сущевский В.И. с учениками',
+	},
+	{ src: '/images/professor.png', alt: 'Профессор Сущевский В.И.' },
+]
+
 export const SchoolsHistory = () => {
+	const { isOpen, setIsOpen, currentIndex, openLightbox } = useLightbox()
+
 	return (
 		<section className='py-16 bg-white'>
 			<motion.h2
@@ -47,23 +64,75 @@ export const SchoolsHistory = () => {
 					здоровья людей. За годы работы мы разработали уникальные методики,
 					которые получили признание в России и за её пределами.
 				</p>
-				<p>
-					Сегодня мы — единственная школа в стране с запатентованными подходами,
-					обучающая врачей, массажистов и всех, кто хочет освоить кинезиологию
-					на профессиональном уровне.
-				</p>
-				<p>
-					В настоящее время предлагается обучение на базовом семинаре: «Основы
-					сканирующей кинезиологии. Диагностика и коррекция структурных
-					дисфункций», а также ряде семинаров с углубленным изучением вопросов
-					диагностики и коррекции биохимических, эмоциональных, висцеральных
-					проблем и дисбаланса, связанного с вегетативными нарушениями.
-				</p>
-				<p>
-					Периодически проводятся семинары по темам: «Кросстейпирование с
-					позиции сканирующей кинезиологии» и «Персонализированный комбитейпинг
-					в практике сканирующего кинезиолога».
-				</p>
+				<div className='grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto'>
+					<motion.div
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1, delay: 0.2 }}
+						viewport={{ once: true }}
+						className='prose max-w-3xl mx-auto text-gray-700 space-y-6 text-lg'
+					>
+						<p>
+							Сегодня мы — единственная школа в стране с запатентованными
+							подходами, обучающая врачей, массажистов и всех, кто хочет освоить
+							кинезиологию на профессиональном уровне.
+						</p>
+						<p>
+							Метод сканирующей кинезиологии относительно молод. Автор начал
+							разработку в 2018 году. Презентация метода успешно прошла в
+							феврале 2018 года в Дубае.
+						</p>
+						<p>
+							В 2024 году была организована школа сканирующей кинезиологии по
+							рекомендации Профессора Васильевой Л. В 2024 году были проведен
+							первый семинар в г. Барнаул. А также проведены мастер-классы в
+							Москве и Федеральном Курорте Белокуриха.
+						</p>
+					</motion.div>
+					<div
+						className='relative w-full md:max-w-sm cursor-pointer'
+						onClick={() => openLightbox(0)}
+					>
+						<img
+							src={IMAGES[0].src}
+							alt={IMAGES[0].alt}
+							className='object-cover object-center rounded-2xl shadow-sm w-full h-[560px] md:h-[420px]'
+						/>
+					</div>
+				</div>
+				<div className='flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto'>
+					<div
+						className='relative w-full cursor-pointer'
+						onClick={() => openLightbox(1)}
+					>
+						<img
+							src={IMAGES[1].src}
+							alt={IMAGES[1].alt}
+							className='object-cover object-center rounded-2xl shadow-sm w-full max-h-full'
+						/>
+					</div>
+					<motion.div
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1, delay: 0.2 }}
+						viewport={{ once: true }}
+						className='prose max-w-3xl mx-auto text-gray-700 space-y-6 text-lg'
+					>
+						<p>
+							В настоящее время предлагается обучение на базовом семинаре:
+							«Основы сканирующей кинезиологии. Диагностика и коррекция
+							структурных дисфункций», а также ряде семинаров с углубленным
+							изучением вопросов диагностики и коррекции биохимических,
+							эмоциональных, висцеральных проблем и дисбаланса, связанного с
+							вегетативными нарушениями.
+						</p>
+						<p>
+							Периодически проводятся семинары по темам: «Кросстейпирование с
+							позиции сканирующей кинезиологии» и «Персонализированный
+							комбитейпинг в практике сканирующего кинезиолога».
+						</p>
+					</motion.div>
+				</div>
 				<p>
 					На осень 2024г. – 2025г. запланированы новые семинары по темам
 					«Германская новая медицина с позиции сканирующей кинезиологии»,
@@ -116,10 +185,13 @@ export const SchoolsHistory = () => {
 				</motion.div>
 
 				<div className='flex flex-col items-center'>
-					<div className='relative w-full max-w-sm'>
+					<div
+						className='relative w-full max-w-sm cursor-pointer'
+						onClick={() => openLightbox(2)}
+					>
 						<img
-							src='/images/professor.png'
-							alt='Профессор Сущевский В.И.'
+							src={IMAGES[2].src}
+							alt={IMAGES[2].alt}
 							className='object-cover object-top rounded-2xl shadow-sm'
 						/>
 					</div>
@@ -139,6 +211,15 @@ export const SchoolsHistory = () => {
 					</motion.ul>
 				</div>
 			</div>
+
+			{isOpen && (
+				<Lightbox
+					open={isOpen}
+					close={() => setIsOpen(false)}
+					slides={IMAGES}
+					index={currentIndex}
+				/>
+			)}
 		</section>
 	)
 }

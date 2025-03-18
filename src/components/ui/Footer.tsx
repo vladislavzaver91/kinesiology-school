@@ -28,7 +28,7 @@ export const Footer = () => {
 
 					{/* Навигация */}
 					<div className='flex flex-col justify-between'>
-						<nav className='flex flex-wrap justify-center lg:justify-start gap-6 text-sm'>
+						<nav className='flex flex-wrap justify-center lg:justify-start gap-6 text-sm mb-6 lg:mb-0'>
 							<Link to='/' className='hover:text-gray-200 transition'>
 								Главная
 							</Link>
